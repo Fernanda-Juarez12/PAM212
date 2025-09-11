@@ -31,4 +31,7 @@ else{
         case 'Credit Card':
             console.log('This is a cedit card');
             break;
+while(count > 0) {
+    console.log(count);
+    count = count -1;
 }
