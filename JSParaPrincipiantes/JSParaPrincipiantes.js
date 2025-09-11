@@ -13,4 +13,8 @@ let result = numberOne > numberTwo;
 
 let userName = 'gordon';let result = numberOne + numberTwo;
 
-console.log(result); console.log(result);
+console.log(result); console.log(result);if(result == true) {
+    console.log('Login correcto');
+} else {
+    console.log('contraseña incorrecta');
+}
