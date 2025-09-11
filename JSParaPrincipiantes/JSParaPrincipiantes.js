@@ -4,6 +4,8 @@ let lastname="carter";
 let numberOne = 100;
 let numberTwo = 500;
 let count = 0;
+//obtener info de un arreglo
+let names = ['ryan', 'joe', 'john', 'mario'];
 
 nameuser='pepe';
 const PI = 3.1415;
@@ -36,4 +38,4 @@ while(count > 0) {
 while(count < 50) {
     console.log(count);
     count++;
-}
+}    console.log(names.length);
