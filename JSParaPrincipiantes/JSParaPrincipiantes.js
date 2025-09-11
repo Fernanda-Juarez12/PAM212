@@ -1,25 +1,8 @@
-Hello World" //string
-'Hello World' //string
-// maneras de escribirlos
+var nameuser="john";
+let lastname="carter";
 
-// boolean
-true
-false
+nameuser='pepe';
+const PI = 3.1415;
+console.log(PI)
 
-// array
-['joe','ryan','martha']
-[1, 2, 3]
-
-//object, conformado por pares clave
-'ryan'
-70.4
-14
-true
-
-// crear objeto a traves de llaves
-{
-    "username": 'ryan'
-    "score": 70.4,
-    "hours": 14, 
-    "proffesional": true,
-}
+let userName = 'gordon';
