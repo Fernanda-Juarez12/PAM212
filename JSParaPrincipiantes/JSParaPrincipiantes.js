@@ -3,6 +3,7 @@ let lastname="carter";
 // OPERADORES
 let numberOne = 100;
 let numberTwo = 500;
+let count = 0;
 
 nameuser='pepe';
 const PI = 3.1415;
@@ -32,6 +33,7 @@ else{
             console.log('This is a cedit card');
             break;
 while(count > 0) {
+while(count < 50) {
     console.log(count);
-    count = count -1;
+    count++;
 }
