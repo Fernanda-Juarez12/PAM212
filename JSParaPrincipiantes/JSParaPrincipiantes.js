@@ -24,4 +24,11 @@ console.log(result); console.log(result);if(result == true) {
 }
 else{
     console.log('You need to folow this tutorial');
- }
+ }switch(typeCard) {
+    case 'Debid Card':
+        console.log('This is a debid Card');
+        break;
+        case 'Credit Card':
+            console.log('This is a cedit card');
+            break;
+}
