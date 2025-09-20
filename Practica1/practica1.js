@@ -14,8 +14,9 @@ console.log(cuadrado(7)); // 49
 console.log(cuadrado(12)); // 144
 
 // ejercicio 3
-// Crea un arrow function llamada saludoPersonalizado que reciba dos parámetros: nombre y edad, y retorne una cadena como la siguiente
-// // "Hola, me llamo Isay y tengo 37 años.
+// Crea un arrow function llamada saludoPersonalizado que reciba dos 
+// parámetros: nombre y edad, y retorne una cadena como la siguiente
+// "Hola, me llamo Isay y tengo 37 años.
 
 const saludoPersonalizado = (nombre, edad) => 
   `Hola, me llamo ${nombre} y tengo ${edad} años.`;
