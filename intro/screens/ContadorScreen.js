@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 
   contenedorBotones:{
     marginTop:12,
-    flexDirection:'column',
+    flexDirection:'row',
     gap:10
   }
 });
