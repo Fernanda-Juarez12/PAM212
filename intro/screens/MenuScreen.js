@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ContadorScreen from './ContadorScreen';
 import BotonesScreen from './botones/BotonesScreen';
 import Botones from './botones/Botones';
-//import TextScreen from './TextScreen';
+import TextScreen from './TextScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
 import ScrollViewScreen from './ScrollViewScreen';
 import ActivityIndicatorScreen from './ActivityIndicatorScreen';
@@ -22,8 +22,8 @@ export default function MenuScreen() {
         case 'botones 2':
             return <Botones/>;
 
-        //case 'TextInput':
-        //return <TextScreen/>;
+        case 'TextInput':
+        return <TextScreen/>;
     
         case 'ImageBackground':
             return <ImageBackgroundScreen />;
@@ -46,7 +46,7 @@ export default function MenuScreen() {
                     <Text>Menú de Prácticas</Text>
                     <Button onPress={()=>setScreen('Contador')} title='Pract:Contador'/>
                     <Button onPress={()=>setScreen('botones')}  title='Pract:Botones'/>
-                    <Button onPress={()=>setScreen('botones 2')}  title='Pract:Botones'/>
+                    <Button onPress={()=>setScreen('botones 2')}  title='Pract:Botones2'/>
                     <Button onPress={()=>setScreen('TextInput')} title='Pract:TextInput'/>
                     <Button onPress={()=>setScreen('ImageBackground')}  title='Pract:ImageBackground'/>
                     <Button onPress={()=>setScreen('ScrollView')} title='Pract:ScrollView'/>
