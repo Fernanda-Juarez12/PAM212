@@ -5,17 +5,11 @@ export default function Profile({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Pantalla de Perfil</Text>
 
-      <Pressable
-        style={[styles.button, styles.buttonSettings]}
-        onPress={() => navigation.navigate('Settings')}
-      >
+      <Pressable style={[styles.button, styles.buttonSettings]} onPress={() => navigation.navigate('Settings')}>
         <Text style={styles.buttonText}>Ir a Configuración</Text>
       </Pressable>
 
-      <Pressable
-        style={[styles.button, styles.buttonHome]}
-        onPress={() => navigation.navigate('Home')}
-      >
+      <Pressable style={[styles.button, styles.buttonHome]} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText}>Volver a Home</Text>
       </Pressable>
     </View>
@@ -45,13 +39,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonSettings: {
-    backgroundColor: '#800e8dff', // mismo morado
+    backgroundColor: '#FF8800', 
   },
   buttonHome: {
-    backgroundColor: '#336764ff', // mismo verde-azulado
+    backgroundColor: '#19706aff',
   },
   buttonText: {
-    color: '#ffffffff',
+    color: '#fff',
     fontSize: 16,
     fontWeight: '600',
   },

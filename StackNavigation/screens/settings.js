@@ -5,28 +5,21 @@ export default function Settings({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Pantalla de Configuración</Text>
 
-      <Pressable
-        style={[styles.button, styles.buttonProfile]}
-        onPress={() => navigation.navigate('Profile')}
-      >
+      <Pressable style={[styles.button, styles.buttonProfile]} onPress={() => navigation.navigate('Profile')}>
         <Text style={styles.buttonText}>Ir a Perfil</Text>
       </Pressable>
 
-      <Pressable
-        style={[styles.button, styles.buttonHome]}
-        onPress={() => navigation.navigate('Home')}
-      >
+      <Pressable style={[styles.button, styles.buttonHome]} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText}>Volver a Home</Text>
       </Pressable>
     </View>
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffffff',
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -46,10 +39,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonProfile: {
-    backgroundColor: '#3587abff', // azul igualado
+    backgroundColor: '#146b5bff', 
   },
   buttonHome: {
-    backgroundColor: '#7d1289ff', // morado oscuro igualado
+    backgroundColor: '#e867b9ff',
   },
   buttonText: {
     color: '#fff',

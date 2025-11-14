@@ -1,20 +1,17 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Pantalla Home</Text>
+      <Text style={styles.title}>Bienvenido a la pantalla principal</Text>
 
-      <Button
-        title="Ir a Perfil"
-        onPress={() => navigation.navigate('Profile')}
-      />
+      <Pressable style={[styles.button, styles.buttonProfile]} onPress={() => navigation.navigate('Profile')}>
+        <Text style={styles.buttonText}>Ir a Perfil</Text>
+      </Pressable>
 
-      <Button
-        title="Ir a Configuración"
-        onPress={() => navigation.navigate('Settings')}
-      />
+      <Pressable style={[styles.button, styles.buttonSettings]} onPress={() => navigation.navigate('Settings')}>
+        <Text style={styles.buttonText}>Ir a Configuración</Text>
+      </Pressable>
     </View>
   );
 }
@@ -22,35 +19,34 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
   },
   title: {
     fontSize: 22,
-    marginBottom: 20,
-  },
-
-  // BOTONES
-  btnPurple: {
-    backgroundColor: '#800e8dff',
-    padding: 14,
-    width: 200,
-    borderRadius: 10,
-    marginBottom: 15,
-  },
-
-  btnBlue: {
-    backgroundColor: '#3587abff',
-    padding: 14,
-    width: 200,
-    borderRadius: 10,
-    marginBottom: 15,
-  },
-
-  btnText: {
-    color: '#fef7f7ff',
-    textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 16,
+    marginBottom: 40,
+    textAlign: 'center',
   },
-});
+  button: {
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 8,
+    marginBottom: 20,
+    width: '80%',
+    alignItems: 'center',
+  },
+  buttonProfile: {
+    backgroundColor: '#ba6ee1ff',
+  },
+  buttonSettings: {
+    backgroundColor: '#6082e8ff',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+})
