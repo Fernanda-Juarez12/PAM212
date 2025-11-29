@@ -1,18 +1,13 @@
-// Comenzamos los servicios de la BD, con las importaciones
-// necesarias y definiendo una clase con un constructor que inicializa 2 atributos que utilizaremos
 
 import { Platform } from "react-native";
 import * as SQLite from 'expo-sqlite';
 
 class DatabaseService {
-
     constructor() {
         this.db = null;
         this.storageKey = 'usuarios';
     }
 
-// Preparamos una función asíncrona para definir el la BD en base
-// a la plataforma con la cual estemos trabajando, si es móvil se crea la BD con la tabla en caso de que no exista
     async initialize() {
         if (Platform.OS === 'web') {
         console.log('Usando LocalStorage para web');
@@ -29,20 +24,16 @@ class DatabaseService {
     }
 }
 
-// La siguiente función de DatabaseServices, es la que usaremos
-// para consultar, también preparada para la web y móvil
-
     async getAll() {
-        if (Platform.OS === 'web') {
-            const data = localStorage.getItem(this.storageKey);
-            return data ? JSON.parse(data) : [];
-        } else {
-            return await this.db.getAllAsync('SELECT * FROM usuarios ORDER BY id DESC');
-        }
+    if (Platform.OS === "web") {
+      const data = localStorage.getItem(this.storageKey);
+      return data ? JSON.parse(data) : [];
+    } else {
+      return await this.db.getAllAsync(
+        "SELECT * FROM usuarios ORDER BY id DESC"
+      );
     }
-
-// Finalizamos el este archivo con la función para insertar,también 
-// preparada para la web y móvil y la exportación de la clase
+  }
 
     async add(nombre) {
         if (Platform.OS === 'web') {
@@ -65,12 +56,48 @@ class DatabaseService {
             return {
                 id: result.lastInsertRowId,
                 nombre,
-                fecha_creacion: new Date().toDateString()
+                fecha_creacion: new Date().toISOString()
             };
         }
     }
-}
 
-//Exportar instancia de la clase
-export default new DatabaseService();
+     async modificar(id, nombre) {
+        if (Platform.OS === 'web') {
+            const usuarios = await this.getAll();
+            const actualizados = usuarios.map(u =>
+                u.id === id ? { ...u, nombre } : u
+            );
+            localStorage.setItem(this.storageKey, JSON.stringify(actualizados));
+    
+            return { id, nombre };
+        } else {
+            await this.db.runAsync(
+                'UPDATE usuarios SET nombre = ? WHERE id = ?',
+                [nombre, id]
+            );
+    
+            return { id, nombre };
+        }
+    }
+
+    async eliminar(id) {
+        if (Platform.OS === 'web') {
+            const usuarios = await this.getAll();
+            const filtrados = usuarios.filter(u => u.id !== id);
+            localStorage.setItem(this.storageKey, JSON.stringify(filtrados));
+            return true;
+        } else {
+            await this.db.runAsync(
+                'DELETE FROM usuarios WHERE id = ?',
+                [id]
+            );
+            return true;
+        }
+    }
+    
+}   
+
+           
+     //Exportar instancia de la clase
+export default new DatabaseService(); 
 
